@@ -1,0 +1,13 @@
+services:
+  app:
+    # Constrói a imagem a partir do Dockerfile na pasta atual (.).
+    build: .
+    container_name: api-alura
+    ports:
+      # Mapeia a porta 8000 do seu computador para a porta 8000 do contêiner.
+      - "8000:8000"
+    volumes:
+      # Monta o diretório atual no diretório /app do contêiner.
+      # Isso permite que as alterações no código sejam refletidas em tempo real (hot-reload).
+      # Também garante que o banco de dados 'escola.db' seja salvo no seu computador.
+      - .:/app
